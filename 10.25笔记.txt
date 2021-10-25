@@ -1,0 +1,27 @@
+java虚拟机栈                 本地方法栈（c/c++）
+
+
+
+    堆（对象）                                          方法区（静态的变量）
+ 
+                            程序计数器
+                            （告诉你该执行什么代码块）
+JVM实际上是由c或者c++实现的一个软件；底层！
+int[] array1={1,2,3,4,5};
+int[]array2=array1;
+array2这个应用指向了array1这个对象
+array1不能同时指向多个对象
+arr指向null意思是不指向任意一个对象
+String
+怎么使用呢，String想要数组传参的话必需要str=str+arr[i];
+char 'a'
+   public static void hannuo(int n,char pos1,char pos2,char pos3) {
+if(n==1){
+    move(pos1,pos3);
+}else {
+    hannuo(n-1,pos1,pos3,pos2);
+    move(pos1,pos3);
+    hannuo(n-1,pos2,pos1,pos3);
+        }
+    }
+汉诺塔的核心
