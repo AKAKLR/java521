@@ -1,0 +1,23 @@
+类的成员
+1.字段 属性
+普通成员变量都属于person的
+count是静态（static）变量；所以属于共同的，在方法区只存一份
+普通方法可以调用静态方法，普通依赖对象。
+静态内部不能调用普通方法，静态方法不依赖对象。
+public void setName(String myName){
+name =myName
+}
+pubilc String getName(){
+return name;
+}
+构造方法
+一个类至少有一个构造方法
+this。data 调用方法
+this。
+静态·代码块只被执行一次
+
+
+静态里面如果要用一个普通的还需要定义对象
+静态变量是和类是一起的，静态的成员变量不能被定义
+所以静态变量的方法不需要调用对象就可以打印。
+为什么mian要用static呢是因为static 的方法就不需要再new一个新的对象了。
