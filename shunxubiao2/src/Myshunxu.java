@@ -29,5 +29,24 @@ public class Myshunxu {
         public boolean isfull(){
             return this.num==this.clam.length;
         }
+        public boolean findnum(int x){
+            for(int j=0;j<clam.length;j++){
+                if(clam[j]==x){
+                    return true;
+                }
+            }
+            return false;
+        }
+        public int serch(int x){
+            int b=-1;
+            for(int j=0;j<clam.length;j++){
+                if(clam[j]==x){
+                    b=j;
+                }
+            }
+            return b;
+        }
+
+
     }
 
