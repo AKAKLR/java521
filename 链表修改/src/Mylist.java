@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class List{
    public int val;
    public List next;
@@ -55,4 +57,35 @@ public void last(int date){
         }
     cur.next=node;
 }
+public List findindax(int xia) {
+    List cur = head;
+    while (xia - 1 != 0) {
+        cur = cur.next;
+        xia--;
+    }
+    return cur;
+}
+public  void  indax(int xia,int date){
+        List node=new  List(date);
+        List cur=head;
+        if(xia==0) {
+        first(date);
+        }
+        findindax(xia);
+        node.next=cur.next;
+        cur.next=node;
+    }
+    public void remove(int data){
+        List node=new  List(data);
+        List cur=head;
+    while (cur.next!=null){
+        if(cur.val==data){
+            cur.next=node.next;
+            return;
+        }else if(cur.next.val==data){
+            cur.next=node.next;
+            return;
+        }
+    }
+    }
 }

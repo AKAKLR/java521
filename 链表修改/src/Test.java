@@ -4,6 +4,8 @@ public class Test {
      mylist.first(10);
         mylist.first(15);
         mylist.last(30);
+        mylist.indax(2,2);
+mylist.remove(10);
      mylist.display();
 
         System.out.println(mylist.coutains(3));
