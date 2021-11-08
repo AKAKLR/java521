@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.Random;
 
 class List{
@@ -75,17 +76,111 @@ public  void  indax(int xia,int date){
         node.next=cur.next;
         cur.next=node;
     }
-    public void remove(int data){
-        List node=new  List(data);
+    public List serch(int date){
         List cur=head;
-    while (cur.next!=null){
-        if(cur.val==data){
-            cur.next=node.next;
-            return;
-        }else if(cur.next.val==data){
-            cur.next=node.next;
+        while (cur.next!=null){
+            if (cur.next.val==date){
+                return cur;
+            }
+            cur= cur.next;
+        }
+            return null;
+    }
+
+    public void remove(int data){
+    List dle=new List(data);
+    if(head==null){
+         System.out.println("为空不能访问");
+         return;
+     }
+     if (head.val==data){
+         head=head.next;
+         return;
+     }
+     List cur=serch(data);
+     if (cur==null){
+         System.out.println("没有要删除的节点");
+         return;
+     }else {
+         dle=cur.next;
+         cur.next=dle.next;
+     }
+    }
+    public List allremove(int data){
+        List prev=head;
+        List cur=head.next;
+        if(head==null){
+            return null;
+        }
+        while (cur!=null){
+            if(cur.val==data){
+                prev.next=cur.next;
+                cur=cur.next;
+            }else{
+                prev=cur;
+                cur=cur.next;
+            }
+        }
+        if (head.val==data){
+            head=head.next;
+        }
+        return head;
+    }
+    public List DAOXU(){
+        if(head==null){
+            return null;
+        }
+        List cur=this.head;
+        List prec=null;
+        while ( cur!=null&&cur.next != null){
+            List curNext=cur.next;
+            cur.next=prec;
+            prec=cur;
+            cur=curNext;
+            curNext=curNext.next;
+        }
+        return prec;
+        }
+        public void display2(List newHead){
+
+            List cur=newHead;
+            while (cur!=null){
+                System.out.print(cur.val+" ");
+                cur=cur.next;
+            }
+            System.out.println();
+        }
+        public void middle(){
+        if (head==null){
             return;
         }
+            List first=this.head;
+            List low=this.head;
+            while (first!=null&&first.next!=null){
+                low=low.next;
+                first=first.next.next;
+            }
+
+            System.out.println(low.val);
+        }
+    public List daoshu(int x){
+        if (head==null||x>0){
+            return null;
+        }
+        List first=this.head;
+        List low=this.head;
+        int move=x-1;
+        while (move>=0||first!=null&&first.next!=null){
+            move--;
+            first=first.next;
+        }
+        while (first!=null&&first.next!=null){
+            first=first.next;
+            low=low.next;
+        }
+        return low;
+
     }
-    }
-}
+        }
+
+
