@@ -181,6 +181,43 @@ public  void  indax(int xia,int date){
         return low;
 
     }
+    public List getIntersectionNode(List headA, List headB) {
+        if(headA == null || headB == null) {
+            return null;
         }
+        List pl = headA;
+        List ps = headB;
+        int lenA = 0;
+        int lenB = 0;
+        while (pl != null) {
+            lenA++;
+            pl = pl.next;
+        }
+        pl = headA;
+        while (ps != null) {
+            lenB++;
+            ps = ps.next;
+        }
+        ps = headB;
+        int len = lenA-lenB;//差值步
+        if(len < 0) {
+            pl = headB;
+            ps = headA;
+            len = lenB-lenA;
+        }
+        //1、pl永远指向了最长的链表   ps 永远指向了最短的链表  2、求到了差值len步
+        while (len>0){
+            pl=pl.next;
+            len--;
+        }
+        while (pl!=ps){
+            pl=pl.next;
+            ps=ps.next;
+        }
+        return pl;
+        //同时走 直到相遇
+    }
+
+}
 
 
