@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏</title>
+</head>
+<body>
+    <input type="button" value="重新开始" id="reset">
+    <div>
+        <span>
+            请输入要猜的数字
+
+        </span>
+        <input type="text"id="num">
+        <input type="button"value="猜"id="guess">
+    </div>
+    <div>
+        <span>已经猜的次数:</span>
+        <span id="count">0</span>
+    </div>
+    <div>
+        <span>猜的结果:</span>
+        <span id="result">0</span>
+    </div>
+    <script>
+        let resetButton=document.querySelector('#reset');
+        let numInput=document.querySelector('#num');
+        let guessButton=document.querySelector('#guess');
+        let countSpan=document.querySelector('#count');
+        let resultSpan=document.querySelector('#result');
+        let toGuess =Math.floor(Math.random()*100)+1;
+        let count=0;
+        console.log(toGuess);
+        guessButton.onclick=function(){
+            count++;
+            countSpan.innerHTML=count;
+            let num=parseInt(numInput,value);
+            console.log(num);
+            if(num<toGuess){
+                console.log("太小了");
+            }
+            if(num>toGuess){
+                console.log("太大了");
+            }
+            if(num=toGuess){
+                console.log("猜对了");
+            }
+
+        }
+    </script>
+</body>
+</html>
